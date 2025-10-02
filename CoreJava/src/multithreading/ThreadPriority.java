@@ -1,4 +1,11 @@
 package multithreading;
+/*
+ * The default priority of main thread is 5
+ * Thread.MIN_PRIORITY 1
+ * Thread.MAX_PRIORITY 10
+ * Thread.NORM_PRIORITY 5
+ * Note : Some OS or platform won't support thread priority
+ * */
 
 public class ThreadPriority {
 
