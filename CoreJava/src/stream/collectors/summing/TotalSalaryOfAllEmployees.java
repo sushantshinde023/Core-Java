@@ -1,5 +1,6 @@
 package stream.collectors.summing;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -57,8 +58,18 @@ public class TotalSalaryOfAllEmployees {
 		 Set<String> uniqueSkillsOfIt=employees.stream().filter(emp->emp.getDepartment().equals("IT")).flatMap(e->e.getSkills().stream()).collect(Collectors.toSet());
 		 System.out.println(uniqueSkillsOfIt);
 		 //9. Find the most common skill among employees.
-		 Map.Entry<String, Long> max= employees.stream().flatMap(e->e.getSkills().stream()).collect(Collectors.groupingBy(s->s,Collectors.counting())).entrySet().stream().max(Map.Entry.comparingByValue()).orElse(null);
+		 Map.Entry<String, Long> employeesWithMaxSkill= employees.stream().flatMap(e->e.getSkills().stream()).collect(Collectors.groupingBy(s->s,Collectors.counting())).entrySet().stream().max(Map.Entry.comparingByValue()).orElse(null);
+		 System.out.println(employeesWithMaxSkill);
 		 
+		 //10. Find the employee who has the maximum number of skills.
+		 
+		 Employee employeeWithMaxSkill=employees.stream().max(Comparator.comparingInt(e->e.getSkills().size())).orElse(null);
+		 System.out.println(employeeWithMaxSkill);
+		 
+		 //11. Find the department that has the highest total salary.
+		 
+		Map.Entry<String,Double> department= employees.stream().collect(Collectors.groupingBy(Employee::getDepartment,Collectors.summingDouble(Employee::getSalary))).entrySet().stream().max(Map.Entry.comparingByValue()).orElse(null);
+		 System.out.println(department);
 	}
 
 }
