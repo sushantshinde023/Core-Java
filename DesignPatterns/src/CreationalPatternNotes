@@ -1,0 +1,68 @@
+
+
+# Design Patterns
+
+- Design patterns are the template for already know problems
+
+## Creational Design Pattern
+
+- What is creational Design Pattern ?
+
+  - A set of patterns to help manage the complexity of growing programming logic
+  - Suppose we have class Invoice , now whenever we create invoice object we will use new Invoice() so many places.
+  - What happens when we need to change the constructor ?
+  - or what if we need a different configuration for different invoice type?
+  - this will be tricky as our code is tightly coupled to invoice class and how invoice objects are created
+  - so we have to change it everywhere
+  - Creational design patterns provides solution for such problems
+  - There are two main themes that are common to most creational pattern
+
+    1. The first is that they encapsulate knowledge about which concrete class should be used
+    2. The second one is that they conceal(Keep secret/Hide) how objects are created
+
+  - Creational design pattern increases flexibility by decoupling object creation from its usage
+
+- Avoiding Complex constructors(Builder Pattern)
+
+  - One common problem is that we end up with large constructors where we have to pass in lots of different parameters
+  - Suppose we have class that represents Person
+  - A Person can have lots of different attributes like First name, Last Name, Middle Name, Email Address, Street Address,ID Number,Date of Birth
+  - Among these some of the attributes are mandatory(first name, last name, date of birth) and others could be optional
+  - So while creating we might want to create with name, date of birth and middle name But another time, we might want to create one with Just with first name, last name, email address and another time we might want to create with first name and last name, date of birth, middle name and email
+  - So there are multiple combinations we could have
+  - Let's assume that person object is immutable, we can't change it later
+  - So how might the constructor of a person object look in Java code
+
+```java
+public Person(String firstName,String lastName,String middleName,String emailAddress,String phoneNumber,String streetAddress,Long idNumber,LocalDate dateOfBirth){
+        ---
+        ---
+}```
+
+-Here we need to pass long list of parameter to the constructor and for the optional ones we don't want to pass we will pass null
+-There are few problems with this
+	- It's quite messy and it's easy to get things in wrong order
+	- if we take look at when the constructors is called
+	
+Person person=new Person("John","Doe",null,null,1234567,null,null,LocalDate.of(1996,12,10));
+
+- It's almost impossible to know what things are being passed in and it would be really easy to pass the wrong parameter in wrong place
+
+- So What are the alternatives
+
+  1. One option is to create different constructors for all different combinations but this isn't practical either, There would be lots of different constructors and that would be really hard to read
+  2. It's also might not be possible if some of the arguments of the same type. Java won't know the difference between two different constructors that pass in three different strings for example
+
+- The solution to this problem is Builder Pattern
+
+  - In this pattern we have a separate class that's used to construct object using just the fields that we want and this class is called builder
+
+  Director ---> Builder ---> ConcreteBuilder ---> Product(Person in this case)
+
+  - In Traditional pattern there is an interface for the builder pattern and then the concrete implementation
+  - The product is the class that would otherwise have the big constructor, so in this example it would be person
+  - And the Director is the class that use the builder to create the object
+
+  - In Java it's simplified to only have ConcreteBuilder without the interface
+
+  Director ---> ConcreteBuilder ---> Product(Person in this case)
