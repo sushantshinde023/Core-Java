@@ -195,9 +195,7 @@ public static PrintSpooler getInstance() {
 	
 - So for these reasons Cloneable interface is often avoided in java
 - We will be using the approach called Copy constructor, which is bit simpler to implement
--      
-
-		  
+-      	  
 -  
 		
  
