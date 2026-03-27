@@ -15,6 +15,7 @@ public class OrderTracker {
 		Pizza hawaiianPizza3= hawaiianPizza1.clone();
 		Pizza hawaiianPizza4= hawaiianPizza1.clone();
 		Pizza hawaiianPizza5= hawaiianPizza1.clone();
+		hawaiian.setName("hawaiian with extra cheese");
 		
 		PizzaFlavor pepperoni = new PizzaFlavor("Pepperoni");
 		

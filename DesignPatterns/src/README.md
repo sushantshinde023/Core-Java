@@ -196,7 +196,16 @@ public static PrintSpooler getInstance() {
 - So for these reasons Cloneable interface is often avoided in java
 - We will be using the approach called Copy constructor, which is bit simpler to implement
 -  Prototype pattern removes duplicate code   	  
--  
+-  However the clone method is used to only create shallow copy of the pizza object, we have assumed that non of the pizza fields are going to change
+- let's look at the drawbacks of shallow copy approach
+-In OrderTracker class we have created Hawaiian pizza and cloned several time, but lets say that later on we want to change the flavor of the first pizza after we have cloned it
+
+hawaiian.setName("hawaiian with extra cheese");
+
+- this changes the the flavor for all of the cloned pizzas as well as for the original  pizza
+- This is because the pizzaFlavor field for each cloned pizza is the same PizzaFlavor object, and if that's the functionality that we want then everything is fine and we don't need to change anything
+- But if we want to avoid accidentally updating all of the cloned objects then deep copy needs to be made instead of shallow copy, so to fix this, we need to change our clone method
+
 		
  
  
