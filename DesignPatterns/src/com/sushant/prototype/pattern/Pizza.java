@@ -21,6 +21,11 @@ public class Pizza extends Meal{
 	public String toString() {
 		return "Pizza [ price = "+super.getPrice()+"pizzaFlavor=" + pizzaFlavor + "]";
 	}
+
+	@Override
+	public Pizza clone() {
+		return new Pizza(this.getPrice(),this.pizzaFlavor);
+	}
 	
 	
 
