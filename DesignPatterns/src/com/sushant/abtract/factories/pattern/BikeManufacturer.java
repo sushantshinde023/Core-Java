@@ -14,11 +14,11 @@ public class BikeManufacturer {
 
 	private static Bike buildBike(String bikeType) {
 		// TODO Auto-generated method stub
-			var roadBikeFactory=FactoryMaker.createFactory(bikeType);
-			var handlebars=roadBikeFactory.createHandlebars();
-			var pedals= roadBikeFactory.createPedals();
-			var frontTire=roadBikeFactory.createTire();
-			var backTire= roadBikeFactory.createTire();
+			var bikeFactory=FactoryMaker.createFactory(bikeType);
+			var handlebars=bikeFactory.createHandlebars();
+			var pedals= bikeFactory.createPedals();
+			var frontTire=bikeFactory.createTire();
+			var backTire= bikeFactory.createTire();
 			return new Bike(handlebars,pedals,frontTire,backTire);
 	}
 
