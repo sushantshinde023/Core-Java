@@ -241,8 +241,9 @@ hawaiian.setName("hawaiian with extra cheese");
 - One Drawback is that there are lot of classes in this pattern implementation which can make it hard to keep track of. Each time when we add new color or new UI Element, there are lot of new classes to create
 - The positive is this means that the application itself doesn't need to know anything about all the different families and how the objects are created behind the scene. It only needs to know  about the user interface factory and everything else is hidden and it turn the user interface factory only needs to know about its concrete implementations as they handles the actual creation of the UI objects like buttons,scrollbars etc
 - Another nice thing about this pattern is that each part of it is quite easy to unit test, concrete classes are injected as dependencies which means they can easily be mocked
-
-
+- Here there is tight coupling in buildBike method from BikeManufacturer class as we are using if else all we need to remember which type of bike and which type of parts we have to pass
+- if we miss anything it will be mess
+- to reduce coupling we will use abstract factories
 
 
  

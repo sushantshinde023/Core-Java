@@ -17,9 +17,21 @@ public class BikeManufacturer {
 		// TODO Auto-generated method stub
 		
 		if(bikeType.equalsIgnoreCase("ROAD")) {
-			return new Bike(new RoadBikeHandlebars(),new RoadBikePedals(),new RoadBikeTire(),new RoadBikeTire());
+			var roadBikeFactory=new RoadBikeFactory();
+			var handlebars=roadBikeFactory.createHandlebars();
+			var pedals= roadBikeFactory.createPedals();
+			var frontTire=roadBikeFactory.createTire();
+			var backTire= roadBikeFactory.createTire();
+			return new Bike(handlebars,pedals,frontTire,backTire);
+			//return new Bike(new RoadBikeHandlebars(),new RoadBikePedals(),new RoadBikeTire(),new RoadBikeTire());
 		}else if(bikeType.equalsIgnoreCase("MOUNTAIN")) {
-			return new Bike(new MountainBikeHanldeBars(),new MountainBikePedals(),new MountainBikeTire(),new MountainBikeTire());
+			var mountainBikeFactory=new MountainBikeFactory();
+			var handlebars=mountainBikeFactory.createHandlebars();
+			var pedals= mountainBikeFactory.createPedals();
+			var frontTire=mountainBikeFactory.createTire();
+			var backTire= mountainBikeFactory.createTire();
+			return new Bike(handlebars,pedals,frontTire,backTire);
+			//return new Bike(new MountainBikeHanldeBars(),new MountainBikePedals(),new MountainBikeTire(),new MountainBikeTire());
 		}else {
 			throw new IllegalArgumentException("Illegal bike type");
 		}
