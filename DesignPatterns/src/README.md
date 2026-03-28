@@ -206,6 +206,19 @@ hawaiian.setName("hawaiian with extra cheese");
 - This is because the pizzaFlavor field for each cloned pizza is the same PizzaFlavor object, and if that's the functionality that we want then everything is fine and we don't need to change anything
 - But if we want to avoid accidentally updating all of the cloned objects then deep copy needs to be made instead of shallow copy, so to fix this, we need to change our clone method
 
-		
+
+### Factory Method Pattern
+
+- The factory method is a pattern that handles deciding which type of concrete class needs to be created by another class
+- E.g. Imagine there's an application called a ticket machine which creates ticket for public transport. Initially the ticket machine might only create bus tickets, so thats straightforward to implement. We will have TicketMachine class and a Ticket class and TicketMachine creates Ticket objects.But later we might want to have ticket machine that sell different types of tickets, like train tickets. So in our code we might need to introduce a ticket interface with two concrete implementations called bus ticket and train ticket.The problem is that the TicketMachine class doesn't know in advance which ticket it needs to create. This is the problem that the factory method pattern solves.
+
+- There are couple of different variations of this pattern
+- One variation is to have a factory method inside creator, so in this case , the TicketMachine would have a createTicket methods that can return different types of tickets.
+- createTicket method will take a parameter that would be type of ticket either bus or train and then it would return the correct concrete type based on that parameter
+- The alternatives i sto create different types of ticket machine that are responsible for creating different types of tickets.
+- so bus ticket machine will create bus tickets and train ticket machine creates Train ticket.
+- Here TicketMachine class is a factory and tickets are the products
+-Use the factory pattern when a class has to create instances of another class bu it doesn't know in advance what the concrete type of that class should be
+
  
  
