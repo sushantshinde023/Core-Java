@@ -259,5 +259,25 @@ hawaiian.setName("hawaiian with extra cheese");
 - Class patterns are concerned with is-a relationship. They are all to do with how classes are structured and interacts,and there is a particular focus on how inheritance is used to create structure.Several of these patterns make use of interfaces to define shared functionality
 - Structural object patterns , on other hand,  are concerned with the "has-a" relationships. They are all about how to use objects, and structural patterns can allow you to change the behavior of individual object at runtime.
 
+### Adapter Pattern
+
+- The adapter pattern allow classes to work together when they normally wouldn't be able to.
+- Imagine a plug adapter, if we have US plug and we travel to europe, we can't put our plug straight in the socket , we need an adapter and this allows the US plug and european plug socket to work together. This is the concept that the adapter pattern is all about
+- Suppose we have two classes that can't normally work together because they have incompatible interfaces, and then we put an adapter in between them so that they can work together
+- This is the pattern that's most often used when working with existing code, rather than writing new code. 
+- If we are writing something new , we have to just make sure that the classes we wanted to communicate would be able to. But if we are working with existing code and we can't or don't want to change it , the adapter pattern can be nice solution
+- One example where we have a legacy code base and we need to add some new features to it. we might not want to change the existing code base because we don't want to risk breaking something, especially if there are no tests or we might not even have access to it, if it's in a third party  library
+- There are two different types of adapter pattern
+
+	1. Class Adapter
+	2. Object Adapter
+	
+- The object version is more common in java because the class version relies on multiple inheritance. This isn't technically possible in java because we can't have classes that extend more than one class but the version of this can be achieved by using interface.
+- The object version of the pattern uses composition. This means that the adapter has an instance the adaptee as a field for that class, so that's the example of a hs a relationship
+- The class version uses inheritance, so in this case the adapter is subclass of daptee, so that's an is-a relationship
+- These two patterns can both be useful depending on the  specific use case
+
+-
+
  
  
