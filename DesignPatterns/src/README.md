@@ -245,6 +245,19 @@ hawaiian.setName("hawaiian with extra cheese");
 - if we miss anything it will be mess
 - to reduce coupling we will use abstract factories
 
+## Structural Design Pattern
+
+- Structural design patterns are all to do with how classes and objects are put together to form larger structure
+- As these structures get bigger over time they can often get more complex, so these patterns are ways of tackling that complexity and simplifying these structures
+- There are two different categories of structural design pattern
+
+	1. Class Patterns - These focuses on classes
+	2. Object Patterns - These focuses on Objects
+	
+- we can think of difference between class patterns and object patterns as the difference between "is-a" relationship and "has-a" relationship
+- e.g. A car is a Vehicle and Car has engine
+- Class patterns are concerned with is-a relationship. They are all to do with how classes are structured and interacts,and there is a particular focus on how inheritance is used to create structure.Several of these patterns make use of interfaces to define shared functionality
+- Structural object patterns , on other hand,  are concerned with the "has-a" relationships. They are all about how to use objects, and structural patterns can allow you to change the behavior of individual object at runtime.
 
  
  
