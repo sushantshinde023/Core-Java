@@ -220,5 +220,30 @@ hawaiian.setName("hawaiian with extra cheese");
 - Here TicketMachine class is a factory and tickets are the products
 -Use the factory pattern when a class has to create instances of another class bu it doesn't know in advance what the concrete type of that class should be
 
+### Abstract Factories Pattern
+
+- Sometimes we have frameworks that use groups of classes together, and there might be different flavors of the framework that should be available for the clients using it to choose from
+- This framework would be made up of family of classes
+- E.g. Imagine a user interface that come in different color schemes. The framework to render the interface is made up of a family of objects. like there would be an interface called button and then concrete classes for each different color(Red and Blue) and same for other parts of interface like scrollbars and toolbars and so on. The user interface should be able to return the right objects to create the right color scheme. If the client wants a blue application, it should return a blue button a blue toolbar and a blue scrollbar and so on.
+
+- There are few constraints that needs to be enforced to make this work
+
+	1. They should be independent of how objects are created, so the user interface shouldn't be coupled to things like how button objects are created
+	2. It should be configured with one of multiple families of objects. so for example the user interface should either use groups of blue objects or red objects
+	3. The family of related objects should be used together, so they should either be all blue or all red.
+	
+- If we have a group of objects with different variations that should be used together like above case, the abstract factory pattern is good way to go 
+- class Diagram for this pattern can look complex, because there are so many classes involved.
+
+- So to implement above example we will have UIFactory interface which will have two concrete implementations RedUIFactory and BlueUIFactory. These would be responsible for creating all the different elements of UI e.g. the BlueUIFactory would create a blue button, blue toolbar and so on.RedUIFactory return red versions of these. The next part of the pattern is to have a factory that the overall application can use to determine which of these color scheme factories to use. The Application composite the color scheme at once and the factory will return the right one. So if the Application passes in red , it will use RedUIFactory and if it passes the blue, it will use the blue UI factory
+
+- So this pattern  is essentially a factory of factories
+- One Drawback is that there are lot of classes in this pattern implementation which can make it hard to keep track of. Each time when we add new color or new UI Element, there are lot of new classes to create
+- The positive is this means that the application itself doesn't need to know anything about all the different families and how the objects are created behind the scene. It only needs to know  about the user interface factory and everything else is hidden and it turn the user interface factory only needs to know about its concrete implementations as they handles the actual creation of the UI objects like buttons,scrollbars etc
+- Another nice thing about this pattern is that each part of it is quite easy to unit test, concrete classes are injected as dependencies which means they can easily be mocked
+
+
+
+
  
  
