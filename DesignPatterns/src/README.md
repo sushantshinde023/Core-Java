@@ -277,7 +277,20 @@ hawaiian.setName("hawaiian with extra cheese");
 - The class version uses inheritance, so in this case the adapter is subclass of daptee, so that's an is-a relationship
 - These two patterns can both be useful depending on the  specific use case
 
--
+### Bridge Pattern
+
+- The bridge pattern is all about using inheritance while maintaining flexibility
+- When we inherit from other classes, those classes become quite closely coupled together, but what if we want the child classes to have more flexibility about how they are maintained?
+- Let's say there is hierarchy of shapes. At the top Shape interface is there and below that there are the classes that extend shape like Circle,square etc. But then the different type of shape can also be of different colors. So there's a separate hierarchy with an interface called color and different implementations called red, blue etc.
+
+- So how do we handle this ?
+- One option would be to add new classes for all different shapes and all the different color combinations but this would quickly lead to the need for lots of new classes.
+- The solution is to use the bridge pattern. In this pattern the shape interface has a color field, and this can be set for all the different objects. So that means we don't have to make all those extra classes.Instead when a new concrete shape is created  the color is set as field,
+- So the main idea for bridge pattern is to use composition over inheritance
+- In this case a shape has color rather than shape is a color.
+- Use this pattern when we have a class hierarchy but we want to keep it flexible and allow the different concrete implementations to be configured in different ways.
+- 
+
 
  
  
