@@ -8,7 +8,7 @@ package com.sushant.structural.adapter.pattern;
 public class WordDocumentUploader {
 	
 	public void uploadWordDocument() {
-		System.out.println("Processing upload....");
+		System.out.println("Processing word document upload....");
 		System.out.println("Document Uploaded");
 	}
 }

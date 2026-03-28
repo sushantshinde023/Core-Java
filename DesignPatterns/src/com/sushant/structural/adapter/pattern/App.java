@@ -9,6 +9,10 @@ public class App {
 		var onlineApplication=new OnlineJobApplication(pdfDocumentUploader);
 		
 		onlineApplication.uploadDocument();
+		
+		var wordDocumentAdapter=new WordDocumentAdapter();
+		var onlineApplicationWithWord=new OnlineJobApplication(wordDocumentAdapter);
+		onlineApplicationWithWord.uploadDocument();
 
 	}
 
