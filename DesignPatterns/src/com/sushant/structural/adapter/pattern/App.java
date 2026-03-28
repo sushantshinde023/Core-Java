@@ -10,8 +10,10 @@ public class App {
 		
 		onlineApplication.uploadDocument();
 		
-		var wordDocumentAdapter=new WordDocumentAdapter();
-		var onlineApplicationWithWord=new OnlineJobApplication(wordDocumentAdapter);
+		//var wordDocumentAdapter=new WordDocumentAdapter();
+		//var onlineApplicationWithWord=new OnlineJobApplication(wordDocumentAdapter);
+		var wordDocumentClassAdapter=new WordDocumentClassAdapter();
+		var onlineApplicationWithWord=new OnlineJobApplication(wordDocumentClassAdapter);
 		onlineApplicationWithWord.uploadDocument();
 
 	}
