@@ -3,7 +3,7 @@ package com.sushant.structural.proxy.pattern;
 public class MusicPlayer {
 	private static final RecommendationsProxy recommendationsProxy= new RecommendationsProxy();
 	public static void main(String[] args){
-		var user = new User("Jill");
+		var user = new User("Jill",false);
 		
 		//Here for the time we are doing expensive operation that fetching songs from database
 		loadHomePage(user);
