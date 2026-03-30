@@ -1,25 +1,24 @@
 package com.sushant.structural.proxy.pattern;
 
 public class MusicPlayer {
-	
+	private static final RecommendationsProxy recommendationsProxy= new RecommendationsProxy();
 	public static void main(String[] args){
 		var user = new User("Jill");
-		var recommendations= new SongRecommendations(user);
 		
 		//Here for the time we are doing expensive operation that fetching songs from database
-		loadHomePage(user,recommendations);
-		loadDiscoverPage(user,recommendations);
+		loadHomePage(user);
+		loadDiscoverPage(user);
 		
 	}
-	private static void loadDiscoverPage(User user,SongRecommendations songRecommendations) {
+	private static void loadDiscoverPage(User user) {
 		System.out.println("Loading discover page ....");
-		songRecommendations.showRecommendations(user);
+		recommendationsProxy.showRecommendations(user);
 		
 	}
 
-	private static void loadHomePage(User user,SongRecommendations songRecommendations) {
+	private static void loadHomePage(User user) {
 		System.out.println("Loading Home page ...");
-		songRecommendations.showRecommendations(user);
+		recommendationsProxy.showRecommendations(user);
 		
 	}
 }
