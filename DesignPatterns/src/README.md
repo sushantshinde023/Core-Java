@@ -289,6 +289,15 @@ hawaiian.setName("hawaiian with extra cheese");
 - So the main idea for bridge pattern is to use composition over inheritance
 - In this case a shape has color rather than shape is a color.
 - Use this pattern when we have a class hierarchy but we want to keep it flexible and allow the different concrete implementations to be configured in different ways.
+
+
+### Composite Pattern
+
+- The composite pattern allows you to trace objects and groups of objects in the same way.
+- e.g. Lat's say you have checklist app that contains a checklist made up of to-do items. So there would be a class called Checklist and that class would contain a collection of To-Do Item objects and let's say i want to have a method that will tell me if a to-do item has been completed or not. And i also want to have the same method in the Checklist class. The checklist is complete if all of the to-do items in the checklist are also complete.
+- The way i do this is with the Composite pattern. So you would have either an interface or an abstract class that both the composite and the parts of the composite both inherit. So in the Interface(TaskComplete) i could have method called boolean isComplete() the ToDo class can implement this and then in the Checklist class, it can also implement the same method. For each ToDo item in the list it can call this isComplete() method for each of those items
+
+- So the composite pattern lets you treat objects and composites of objects in same way and it also means that the clients using the composites can ignore differences between the composites and its parts e.g. A client could use the isComplete() method for the checklist and also for the individual to-do items in the same way because they inherit from the same interface.
 - 
 
 
