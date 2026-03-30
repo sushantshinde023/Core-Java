@@ -298,7 +298,26 @@ hawaiian.setName("hawaiian with extra cheese");
 - The way i do this is with the Composite pattern. So you would have either an interface or an abstract class that both the composite and the parts of the composite both inherit. So in the Interface(TaskComplete) i could have method called boolean isComplete() the ToDo class can implement this and then in the Checklist class, it can also implement the same method. For each ToDo item in the list it can call this isComplete() method for each of those items
 
 - So the composite pattern lets you treat objects and composites of objects in same way and it also means that the clients using the composites can ignore differences between the composites and its parts e.g. A client could use the isComplete() method for the checklist and also for the individual to-do items in the same way because they inherit from the same interface.
-- 
+
+
+### The Decorator Pattern
+
+- The Decorator pattern change the behavior of an object without having to create a new subclass for that behavior
+- e.g. you have an app for creating rooms that are decorated in different styles. So you might start off with a blank EmptyRoom Class, but then you want to have a room with couch in it, so you would have a RoomWithCouch class. And then you might have a room with couch and table(RoomWithCouchAndTable) in it, so you would have a class representing a RoomWithCouchAndTable. and then there might be lots of different combinations for lots of different types of furniture. You can see that if i had different subclasses for all those furniture different combinations it would get out of  hand very quickly. 
+- The solution is to use a decorator pattern. The first part of this pattern is that you have an interface at the top, so in this case a Room interface and then concrete implementation of that room interface. One Concrete implementation could be RoomImpl, which represents an empty room with no decoration. Next there's another interface or an abstract class underneath Room interface(which is base) called RoomDecorator. Then there are concrete implementations of this decorator class for each of the different decorations you want to have like RoomWithCouch,RoomWithLamp etc.
+- These decorations take a concrete room object as an argument to  their constructor like
+
+	var room =new RoomImpl();
+	var roomWithSofa=new RoomWithSofa(room);
+	
+- And we can do this as many times as you want 
+
+	var roomWithLamp=newRoomWIthLamp(room);
+	var roomWithBed=newRoomWithBed(room);
+	
+- so in this case you will end up with room with sofa,lamp and bed
+-So this design cuts down on number of classes we need because you don't need one for each different combination of declarations
+- Each new object that's created can have its own specific functionality without affecting other objects.
 
 
  
