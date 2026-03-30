@@ -330,5 +330,15 @@ hawaiian.setName("hawaiian with extra cheese");
 - As well as being simpler it helps to minimize the dependencies between the client and the subsystems. The other nice thing is that you don't have to use the facade if you don't want to just because it's there, you can directly access the classes or subsystems underneath if you want to.
 - The facade pattern can be helpful when you want to provide a simple interface to a complex subsystem
 
+
+### Flyweight Pattern
+
+- The flyweight pattern is all about minimizing memory usage.  It does this by reusing  objects that have already been created rather than using new ones. Java String Pool is best example
+- One example in which this pattern is used that is Word processor, when someone types a sentence each letter could be new object so if someone write long document there are going to lot of objects, But with the flyweight pattern, you have only one object for each letter, so one 'a' object, one 'b' object, and so on, and these can be reused.
+- This way less memory is used for storing all the different letters as typed. The way this is usually implemented in java is that you have factory class with a map for example HashMap.Then when someone types the letter a, it checks if there's an object with the key 'a' inside the map. if not then creates one and puts it in map. If there's one already there, it reuses that one. The only thing that's different about each letter 'a' is it's position in that document. So the object has states, which is immutable for example the name of the letter. This immutable state should only be controlled through the factory and then there should be mutable states for example the position. 
+- This is similar concept to cache, the idea is that if the data is already there and can be reused it should be.
+- This is especially useful if it's computationally expensive to create new objects. So you should use this pattern when you want to save memory by reusing objects instead of creating new ones.
+
+
  
  
