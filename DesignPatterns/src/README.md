@@ -320,5 +320,15 @@ hawaiian.setName("hawaiian with extra cheese");
 - Each new object that's created can have its own specific functionality without affecting other objects.
 
 - It allows for the dynamic addition of functionalities to objects without modifying their structure
+
+### Facade Pattern
+
+- The word facade can mean a deceptive outward appearance, and in this case it means that you have simple interface that hides the complexity of the code behind it. e.g. Think about when you write an email and click on send, there's a lot going on behind the scenes when we click on that send button , but most people aren't thinking about the technical things behind the scenes every time they send an email and we certainly don't need to know how email protocols work in order to send one. So in this example the send button is facade that hides the complexity of sending an email.
+- Facades are needed in software because it's common to break large systems down into smaller parts, often with lots of dependencies between them . This is generally a good thing because it makes systems more reusable and easier to customize , but it can also make it harder to use. A client want to use a system like this would have to interact with all classes underneath. This means that it can make the most of the possible customizations, but sometimes the client might not care about those and still has to use all the classes anyway.
+- So facade is used as a single , simpler interface to those complex systems e.g. RestTemplate → hides HTTP complexity , JdbcTemplate → hides JDBC boilerplate
+- Then the client can just use this simple facade interface to do everything at once.
+- As well as being simpler it helps to minimize the dependencies between the client and the subsystems. The other nice thing is that you don't have to use the facade if you don't want to just because it's there, you can directly access the classes or subsystems underneath if you want to.
+- The facade pattern can be helpful when you want to provide a simple interface to a complex subsystem
+
  
  
