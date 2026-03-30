@@ -319,6 +319,6 @@ hawaiian.setName("hawaiian with extra cheese");
 -So this design cuts down on number of classes we need because you don't need one for each different combination of declarations
 - Each new object that's created can have its own specific functionality without affecting other objects.
 
-
+- It allows for the dynamic addition of functionalities to objects without modifying their structure
  
  
