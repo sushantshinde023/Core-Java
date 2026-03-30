@@ -360,4 +360,12 @@ hawaiian.setName("hawaiian with extra cheese");
 -  Object patterns look at how objects can work together to get things done that couldn't be done by a single object on its own.
 - Some other object patterns are more focused on encapsulating  behavior in a single object and then delegating requests to it.
 
+### Chain of Responsibility Pattern
+
+- The aim of the chain of responsibility pattern is to decouple the sender of request from the receiver of the request.
+- E.g. you have a logger, sometimes you want the logger to print output to the console and sometimes you want it to write to a file. So when you have some code that logs something, at that point , it needs to know whether to write the log to the console or to a file. The chain of responsibility pattern can be used as a way of working out which one to send it to at runtime. for example it could first check if the logger is a type of logger  that prints to console . If it is , then it prints the log to the console and that's the end of chain. However the answer is no it could pass it along the chain and check if it's a logger that prints to a file, if it is then prints the log to the file and that's the end of chain.
+- In this scenario, It's the responsibility of the  logger that prints to the console to pass it along the chain to the next possible option.
+- One thing to be careful of is making sure you don't accidentally end up stuck in a circle. like if the file logger has a reference to the console logger as the next one to check  you would end up in an endless loop.If you have lots of links in the chain this could accidentally happen quite easily.
+- The advantage of using this pattern is that it decouples the sender of the request from the receiver. E.g. The logger  doesn't need to know in advance if it is writing to the console or a file.
+- One thing to consider is that there is no guarantee that the request is going to be handled. If it reaches the end of the chain and hasn't found an option that fits, then nothing will happen with the request
  
