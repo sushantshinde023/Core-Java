@@ -339,6 +339,12 @@ hawaiian.setName("hawaiian with extra cheese");
 - This is similar concept to cache, the idea is that if the data is already there and can be reused it should be.
 - This is especially useful if it's computationally expensive to create new objects. So you should use this pattern when you want to save memory by reusing objects instead of creating new ones.
 
+### Proxy Pattern
 
+- In the proxy pattern , a proxy is a class that controls access to the functionality on another class
+- E.g. imagine that you have a class that does some expensive setup when you create a new instance of it.When describing this pattern , this class is sometimes referred to as the Subject. So let's say for example that the first time the subject is used, it has lots of expensive calls to a database, and then later it does something with the data . This code might be in a third-party library,so you might not have access to it. In this case , you only want the expensive setup to happen once, the first time the object is created. After that , you just want to do the part where it processes the data.You don't really want the classes that call this code to have to implement the logic about only doing this setup once. So in this case , you would have a proxy object in between , and that controls access to the  class with the expensive setup. Then the client just calls the proxy.. It doesn't need to know about this complex setup.
+- So the proxy can be used to only initialize objects on demand for optimization or for example if you only want people with certain privileges to be able to do something , the proxy could be used to control who performs a certain action.
+- Another use case is when you have an object that resides in a  different address space , you could use proxy to hide that fact from client.
+- A proxy controls access to another objects, which you might want to do for a number of different reasons.  
  
  
