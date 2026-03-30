@@ -347,4 +347,17 @@ hawaiian.setName("hawaiian with extra cheese");
 - Another use case is when you have an object that resides in a  different address space , you could use proxy to hide that fact from client.
 - A proxy controls access to another objects, which you might want to do for a number of different reasons.  
  
+## Behavioral Design Pattern
+
+- Behavioral design patterns are about how objects assign responsibilities between each other.
+- They are concerned with how objects are connected , how they communicate with each other and how responsibilities are assigned between them. They are often to do with complex control flows.
+- Like structural design pattern , there are some behavioral patterns that are focused on classes and some of that are focused on objects
+
+	1. Class patterns
+	2. Object patterns
+	
+-  Class behavioral patterns use inheritance to share behavior between different classes
+-  Object patterns look at how objects can work together to get things done that couldn't be done by a single object on its own.
+- Some other object patterns are more focused on encapsulating  behavior in a single object and then delegating requests to it.
+
  
