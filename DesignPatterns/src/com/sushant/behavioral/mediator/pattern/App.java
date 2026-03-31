@@ -8,10 +8,13 @@ public class App {
 		var board=new Board();
 		var ticket=new Ticket();
 		var assignee=new Assignee();
-		
-		assignee.pickUpTicket(ticket, board);
+		var mediator=new Mediator(ticket,assignee,board);
+//		assignee.pickUpTicket(ticket, board);
+//		System.out.println();
+//		assignee.resolveTicket(ticket, board);
+		mediator.pickUpTicket();
 		System.out.println();
-		assignee.resolveTicket(ticket, board);
+		mediator.resolveTicket();
 
 	}
 

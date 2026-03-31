@@ -15,12 +15,12 @@ public class Board {
 	
 	public void addTicketToInProgressTickets(Ticket ticket) {
 		inProgressTicket.add(ticket);
-		ticket.setStatus(Ticket.Status.IN_PROGRESS);
+		//ticket.setStatus(Ticket.Status.IN_PROGRESS);
 		System.out.println("Ticket added to  inProgressTickets");
 	}
 	
 	public void addTicketToDoneTickets(Ticket ticket) {
-		ticket.setStatus(Ticket.Status.DONE);
+		//ticket.setStatus(Ticket.Status.DONE);
 		doneTickets.add(ticket);
 		System.out.println("Ticket added to  doneTickets");
 		inProgressTicket.remove(ticket);
