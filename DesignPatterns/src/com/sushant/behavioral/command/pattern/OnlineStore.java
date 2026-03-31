@@ -15,11 +15,12 @@ public class OnlineStore {
 //		item2.removeFromBasket();
 		
 		var itemOperationExecutor=new ItemOperationExecutor();
-		itemOperationExecutor.doOperation(new AddItemToBasket(item1));
-		itemOperationExecutor.doOperation(new AddItemToBasket(item2));
-		itemOperationExecutor.doOperation(new AddItemToBasket(item3));
+		itemOperationExecutor.queueOperation(new AddItemToBasket(item1));
+		itemOperationExecutor.queueOperation(new AddItemToBasket(item2));
+		itemOperationExecutor.queueOperation(new AddItemToBasket(item3));
 		
-		itemOperationExecutor.doOperation(new RemoveItemFromBasket(item2));
+		itemOperationExecutor.queueOperation(new RemoveItemFromBasket(item2));
+		itemOperationExecutor.checkout();
 
 	}
 
