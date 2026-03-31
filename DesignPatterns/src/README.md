@@ -368,4 +368,14 @@ hawaiian.setName("hawaiian with extra cheese");
 - One thing to be careful of is making sure you don't accidentally end up stuck in a circle. like if the file logger has a reference to the console logger as the next one to check  you would end up in an endless loop.If you have lots of links in the chain this could accidentally happen quite easily.
 - The advantage of using this pattern is that it decouples the sender of the request from the receiver. E.g. The logger  doesn't need to know in advance if it is writing to the console or a file.
 - One thing to consider is that there is no guarantee that the request is going to be handled. If it reaches the end of the chain and hasn't found an option that fits, then nothing will happen with the request
+
+### Command Pattern
+
+- Sometimes when writing software you need to issue a request, but you might not know in advance what's being requested or what's receiving the request
+- So let's think about a real-world example. Imagine someone has written an app for buying and selling things online. The app could be used by lots of different companies selling different things. One example might be a restaurant using it to allow customers to order food online. Another company might use it for selling cloths online. In both the cases, user journey is pretty much the same. The customer is browsing online and they decide they want to order something.So the input their order into the app and that information gets passed from the app to the company. But when the app is being written, we can't say explicitly what kind of thing the customer is going to order. It might be a pizza or it might be pair of shoes. What exactly they are ordering is down to the different companies using the app. We also don't know what will happen after the order is sent, so there might be an immediate response saying the order is on its way or there might be some checks to see if it's in stock or there there might be reply saying that order will arrive in a month.
+- The command pattern is a way of making requests when you don't know anything about what exactly is being request or what exactly is receiving it. It does this by encapsulating the request inside an object
+-This might seem a bit counterintuitive when you are used to object-oriented design.
+- Normally a command is something you would put in a method not a class, But this is useful way of decoupling the objects that invokes the command from the objects that know how to handle it and perform that command.
+- So the command pattern is especially useful for commands that you might want to perform later on. for example, they are sometimes used to support undo and re-do operations and things like queuing or logging requests to be performed at different times.
+
  
