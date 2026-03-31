@@ -378,4 +378,23 @@ hawaiian.setName("hawaiian with extra cheese");
 - Normally a command is something you would put in a method not a class, But this is useful way of decoupling the objects that invokes the command from the objects that know how to handle it and perform that command.
 - So the command pattern is especially useful for commands that you might want to perform later on. for example, they are sometimes used to support undo and re-do operations and things like queuing or logging requests to be performed at different times.
 
+### Interpreter Pattern
+
+- Imagine a scenario where two people are trying to communicate but they don't speak same language. A translator or an interpreter can join them and translates everything they say to each other.
+- The interpreter pattern is a way of translating one language into another.
+- So if you think of Google Translate for example, it takes the input language and interpret it into a new language. There are many different and varied scenarios where the interpreter pattern might be used.
+- It could be used to write custom regular expressions or even write your own compiler or it could  use it to translate human languages or parse SQL or even create simple calculator
+- The idea of the interpreter pattern in Java is that if the same problem keeps coming up then you can express that problem as a sentence and interpret it.
+- The interpreter defines a grammer for the language and then uses an abstract syntax tree to interpret it.
+- This is quite complicated concept, so let's see what it actually looks like.
+- The first component in the interpreter pattern is the context. If you are translating a sentence into another language, the context would be the sentence. So the context is often just a String. 
+- The next part is an AbstractExpression ,which can be interface or an abstract class that defines a method used for interpreting the context. Each time the interpret method is called, the context is changed in some way.
+- There are two different possible implementations of the AbstractExpression
+	1. Terminal
+	2. Non-terminal
+	
+- A non-terminal expression calls the interpret method, which alters the context and then it passes the context on  to another expression until it reaches the terminal expression.
+- A terminal expression is the last time the interpret method gets called.
+- For example if you are translating  a language the context could be "Hello World". The non-terminal operations translate each word into the correct word in the new language anad when it gets to some punctuation like a period or exclamation mark , it returns that and stops. This structure makes it easy to extend and implement the grammer. Howeber the interpreter pattern works best when the grammer being interpreted is simple. Complex grammer can be difficult to maintain because you would need a new expression class for every new rule you introduce
+
  
