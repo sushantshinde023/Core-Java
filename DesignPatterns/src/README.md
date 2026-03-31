@@ -395,6 +395,26 @@ hawaiian.setName("hawaiian with extra cheese");
 	
 - A non-terminal expression calls the interpret method, which alters the context and then it passes the context on  to another expression until it reaches the terminal expression.
 - A terminal expression is the last time the interpret method gets called.
-- For example if you are translating  a language the context could be "Hello World". The non-terminal operations translate each word into the correct word in the new language anad when it gets to some punctuation like a period or exclamation mark , it returns that and stops. This structure makes it easy to extend and implement the grammer. Howeber the interpreter pattern works best when the grammer being interpreted is simple. Complex grammer can be difficult to maintain because you would need a new expression class for every new rule you introduce
+- For example if you are translating  a language the context could be "Hello World". The non-terminal operations translate each word into the correct word in the new language anad when it gets to some punctuation like a period or exclamation mark , it returns that and stops. This structure makes it easy to extend and implement the grammer. However the interpreter pattern works best when the grammer being interpreted is simple. Complex grammer can be difficult to maintain because you would need a new expression class for every new rule you introduce
 
+
+### Iterator Pattern
+
+- You have probably used the iterator pattern in java quite a lot. In fact may be even more than you realize.
+- If you have ever used collections which you probably have is likely you have used the iterator pattern extensively.
+- Below forEach loop is commonly used in java to iterate over a collection of objects and under the hood is actually using the iterator pattern
+
+	for(String word : sentence){
+		System.out.println(word);
+	}
+	
+-  The collection interface implements another interface called iterable, which is what for each loop is using.
+- One of the befits of the iterator pattern that's shown in the above example is that it doesn't matter what type of collection the sentence object is , it could be an ArrayList or a HashSet  or LinkedBlockingQueue or whatever as long as it's something that implements collection interface the for-each loop works same on all of them and it's relevant what the underlying structure looks like .
+- Let's say i have list or collection like list of countries, i might want to traverse this list and access the items in it for some app that i'm making and there might be different ways i want to traverse it. For example i might want to skip all the countries in Europe or all of the countries with a certain population size and so on.I could add a load of methods to the List class to sort through the list in different ways, but i don't want to just add them all in there because it will turn into one big class with load of stuffing. I also don't know yet which kinds of iteration i need, so i might end up including loads of unused code.
+- So this is where the iterator comes in. The Iterator is a separate object that takes all of the responsibility for moving along the lost and accessing the objects inside it
+- It's responsible for keeping track of which elements have already been traversed.
+- SO to Summarize, the iterator pattern provides a way to access the items in a list or collection of some type without exposing the underlying structure.
+- In java there are interfaces called iterable and iterator which do a lot of heavy lifting for you.
+- But it's also important to know how it works because you might want to write your own custom iterators and it will help you to understand how the iterator you use day-to-day work under the hood.
+      
  
