@@ -416,5 +416,16 @@ hawaiian.setName("hawaiian with extra cheese");
 - SO to Summarize, the iterator pattern provides a way to access the items in a list or collection of some type without exposing the underlying structure.
 - In java there are interfaces called iterable and iterator which do a lot of heavy lifting for you.
 - But it's also important to know how it works because you might want to write your own custom iterators and it will help you to understand how the iterator you use day-to-day work under the hood.
-      
+ 
+### Mediator Pattern
+
+- The definition of mediator is someone who tries to make people come to an agreement when they are in conflicts
+- They act as a neutral party who sits in between all of the others, so that they don't have to speak to each other directly
+- As a another kind of analogy , imagine a restaurant the customers are at their table and they need to communicate what they want to eat. The chefs are in the kitchen and they need to know what to cook and then the meals need to be brought out to table. The owner of the restaurant needs to make a profit to run the restaurant, so money needs to be collected from the customers. Imagine how this would work if there was no waiter or waitress. The customer have to go to the kitchen to tell the chefs what they want. Then chefs should have to bring out the food to table and at the end of meal the owner would have to come into the restaurant to collect the payments.
+- In this scenario, a waiter or waitress is like a mediator handling all of these interactions so that these groups of people don't have to interact with each other directly.
+- so if we go back to coding and object -oriented design, you often end-up with large applications that have lots of different objects. We are told that classes should be small and self-contained, so you often have lots of different ones, which leads to lots of different objects. This is good thing as it means that each class is  focused on its one thing, and the behavior of the application as whole is split into small chunks. But one of the downsides that can occur is that you end up with a system with lots of different objects that all know about each other and are all interconnected. You might even endup with a situation where every object knows about every other objects. Apart from the fact that it might become a nightmare to understand  what's actually going on , this leads to tight coupling between objects, and changes to one might result in the need for changes to another.
+- It might also make it difficult to reuse objects because they might have to communicate with so many other objects.
+- The idea of mediator pattern is to have an object that sole purpose is to handle these interactions between all of the different objects.It sits in the middle of them all and handles the communications between them.
+- This provides loose coupling between the objects and this makes the program simpler to understand and to maintain.
+
  
