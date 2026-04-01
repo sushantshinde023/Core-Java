@@ -7,8 +7,11 @@ public class DocumentWriter {
 		
 		var textDocument=new TextDocument();
 		textDocument.write("Hello World ");
+		textDocument.save();
 		textDocument.print();
 		textDocument.write("How are you");
+		textDocument.print();
+		textDocument.undo();
 		textDocument.print();
 	}
 
