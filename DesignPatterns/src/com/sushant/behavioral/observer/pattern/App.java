@@ -1,0 +1,20 @@
+package com.sushant.behavioral.observer.pattern;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		var user1=new User();
+		var user2=new User();
+		
+		var newsfeed=new Newsfeed();
+		
+		user1.setStatus("Going for walk");
+		user2.setStatus("Enjoying a cofee");
+		
+		newsfeed.printStatus();
+
+	}
+
+}
