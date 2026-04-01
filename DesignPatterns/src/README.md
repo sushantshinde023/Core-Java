@@ -461,3 +461,13 @@ hawaiian.setName("hawaiian with extra cheese");
 - Any of the operation performed by the clients that depend on the state of its are handled by these concrete implementations of the state interface.
 - So state pattern is a way of avoiding huge if else blocks or switch statements and in this way it can help simplify the code
 - The state pattern allows an object to change its runtime behavior when its internal state changes. 
+
+### Strategy Pattern
+
+- In the strategy pattern , the word strategy usually refers to an algorithm. When you use this pattern you define a family of algorithms and make them interchangeable.
+- As a real life example say you have a video game and the person you are controlling has different powers they can use. for example they can fly, they can climb things, they can swim and so on. The action the player takes or the strategy they use will depend on the situation they find themselves in during the game. They will need to decide dynamically which power to use.
+= This is bit like how the strategy pattern  works. In java there are many different scenarios where you might need the strategy pattern. for example if you want to encrypt files but have different ways of encrypting them depending on the situation or if you have different types of validation that you could use or different sorting algorithms that you want to use or want to save to different file types, and so on
+- This is quite common pattern in java and it's relatively simple to implement.
+- So let's see what this would look like . You would have the context which maintains a reference to the strategy objects. The strategy is usually defined in an interface and then there are different concrete implementations for different strategies. This is cleaner than having all the different strategies defined inside the context and allows them to be used interchangeably at runtime.
+- Since this pattern was first described by the GoF(Gangs of Four) new features in java have been implemented which make this pattern even simpler to implement.
+- With the use of functional programming features that were in java 8 such as lambdas and static methods in functional interfaces we can actually remove the need for the concrete implementations of the interface altogether.  
