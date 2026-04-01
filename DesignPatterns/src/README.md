@@ -450,3 +450,14 @@ hawaiian.setName("hawaiian with extra cheese");
 - In java you may have come across classes called observer and observable which have been commonly used to implement the observer pattern in java.
 - The Observer and Observable interfaces were deprecated in Java 9 and no longer recommended for use.
 - One of the problems was that they could be used to tell you that something had changed but they didn't give you any details about what had changed. Another option is to implement these interfaces yourself or you can use the property change listener and property change support classes which what we will implementing in com.sushant.behavioral.observer.pattern
+
+### State Pattern
+
+- Sometimes you will have an object that needs to behave differently depending on its internal state.
+- The state pattern allows the object to alter its behavior when its state changes.
+- Imagine a play or pause button on a media player. If someone clicks the play button what happens will depend on the state of the media player for example it could be already playing or paused or rewinding and so on. If you write a media player in java you might end up with loads of if statements about the state of the player. For example you check if it was playing and then have the code to handle that scenario and then you check if it was paused and then have some code to handle that scenario and so on. This can get quite lengthy and complex
+- The state pattern provides a better solution to this problem. The state is separated out as a separate objects from clients. Usually there is an interface for the state and then concrete implementation for each different states.
+- So for example in the media player example the media player itself would be the client and then there would be a concrete implementation of states for playing and stopped and so on. 
+- Any of the operation performed by the clients that depend on the state of its are handled by these concrete implementations of the state interface.
+- So state pattern is a way of avoiding huge if else blocks or switch statements and in this way it can help simplify the code
+- The state pattern allows an object to change its runtime behavior when its internal state changes. 
