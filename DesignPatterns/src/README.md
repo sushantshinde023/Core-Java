@@ -471,3 +471,13 @@ hawaiian.setName("hawaiian with extra cheese");
 - So let's see what this would look like . You would have the context which maintains a reference to the strategy objects. The strategy is usually defined in an interface and then there are different concrete implementations for different strategies. This is cleaner than having all the different strategies defined inside the context and allows them to be used interchangeably at runtime.
 - Since this pattern was first described by the GoF(Gangs of Four) new features in java have been implemented which make this pattern even simpler to implement.
 - With the use of functional programming features that were in java 8 such as lambdas and static methods in functional interfaces we can actually remove the need for the concrete implementations of the interface altogether.  
+
+### Template method Pattern
+
+- The template method pattern is all about defining the common steps in an algorithm in a superclass and redefining some of those steps in subclass. This is actually most commonly used design patterns.
+- Imagine there is recipe for making pizza.Some steps in the recipe are the same for every pizza. for example how to make the base and how long to leave the pizza in oven will be the same for all of them but the instructions for adding the toppings will be different for each type of pizza order. In terms of how this would look in java code you would have an abstract class which has methods for creating the base and cooking in the oven.
+- The method for adding topping would be an abstract method without an implementation. Then you would have different concrete subclasses for the different types of pizza and they would have their own implementation of the addTopping method. For example, you could have a Hawaiian pizza that adds ham and pineapple in the addTopping method.
+- This pattern is fairly  common in frameworks but there are some reasons why not everyone is fan of the template method pattern. It can be difficult to communicate to users of the framework what the intent is. If you came across the use of this pattern it might not be immediately obvious which parts are meant to be changed and it can also be quite difficult to follow the flow of the program as the functionality can jump between different classes.
+- However this is certainly not a reason not to use it if it fits your use case and it is a useful pattern to know as it is commonly used.
+- It can definitely be useful when you want to implement the  common parts of an algorithm once and leave the varying parts to subclasses. In particular, if you find that  you have classes which duplicate the same code , you might refactor some of these steps into an abstract class.
+  
