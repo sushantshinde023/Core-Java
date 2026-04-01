@@ -10,8 +10,13 @@ public class App {
 		
 		var newsfeed=new Newsfeed();
 		
+		user1.addPropertyChangeListener(newsfeed);
+		user2.addPropertyChangeListener(newsfeed);
+		
 		user1.setStatus("Going for walk");
 		user2.setStatus("Enjoying a cofee");
+		
+		
 		
 		newsfeed.printStatus();
 
