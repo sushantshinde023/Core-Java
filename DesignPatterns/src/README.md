@@ -439,4 +439,14 @@ hawaiian.setName("hawaiian with extra cheese");
 - The Memento object sits between Originator and Caretaker.So the objects doing the changing has access to the memento which provides the saved states.The implementation of the originator state is black box. The memento object just knows what the state was at a given time. It's worth bearing in mind that if object whose states you want to capture contains lot of data, using the memnto pattern can result in increase in memory usage and this might outweigh the benefits of using it.
 - But the object state is fairly simple and you want to be able to save it and restore it later the memento pattern is good way  to do this without exposing the structure of the objects
 
- 
+### Observer Pattern
+
+- As name suggest, The Observer pattern is all about watching or observing other objects. In object oriented design you often end up with a system broken up into lots of classes that work together. One of the challenge is making those classes interact and cooperate while avoiding tight coupling between them.The Observer pattern provides a way to do this.
+- You have an objects that's being watched called the subject or the Observable and then you have observers which watch the objects.
+- As a real life example  think about social media sites where you are connected to people or follow people if you post something rather than siting and watching to see if anyone comments you will receive a notification if someone does.
+- In this example the post is observable and you are the observer.
+- The Observer pattern is quite common pattern in java applications.You would use it when you have one or more objects that need to be notified of changes made by another object and updated accordingly.
+- For example if you have a dashboard that shows several different types of charts you would want all the garphs to updates when the data is updated. 
+- In java you may have come across classes called observer and observable which have been commonly used to implement the observer pattern in java.
+- The Observer and Observable interfaces were deprecated in Java 9 and no longer recommended for use.
+- One of the problems was that they could be used to tell you that something had changed but they didn't give you any details about what had changed. Another option is to implement these interfaces yourself or you can use the property change listener and property change support classes which what we will implementing in com.sushant.behavioral.observer.pattern
