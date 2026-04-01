@@ -428,4 +428,15 @@ hawaiian.setName("hawaiian with extra cheese");
 - The idea of mediator pattern is to have an object that sole purpose is to handle these interactions between all of the different objects.It sits in the middle of them all and handles the communications between them.
 - This provides loose coupling between the objects and this makes the program simpler to understand and to maintain.
 
+### Memento Pattern
+
+- Imagine you want to create an undo operation and to do that you need to save the state of an object.But you alos don't want to break the principle of encapsulation.
+- The Memento pattern allows you to do exactly this. There are some cases where you need to keep a record of the states of an object.
+- For example say you are writing in a text document and at some point  you click on save and then you reqword what you have written but letter you decide you want to go back to that previous version. You would need to have a record of the state that document was in before you saved it . This is what the Memento pattern does.
+- Memento pattern externalize the state of an object at a given time in case you need to go back to it later but the main challenge is how you do this without breaking encapsulation. One of the benefits of encapsulation is is that it ensures objects hide their states from other objects. Classes often contain several fields that should be kept in consistent state. So for example in java, you often have private fields with public getter methods and this is so that other objects can't interfare with the states of those private fields. If they are encapsulated it prevents anyone else using the objects from messing with the states. Encapsulation also means you can change the underling structure of the object without causing breaking changes for anything else using it.
+- So in the memento pattern you create a copy of that state in a separate object. First of all, you have an object whose states are going to be changing and this is called Originator. Then you have the object which is going to be changing it which is called the Caretaker.
+- for example in  the document example the document would be teh originator and the person editing it would be caretaker.
+- The Memento object sits between Originator and Caretaker.So the objects doing the changing has access to the memento which provides the saved states.The implementation of the originator state is black box. The memento object just knows what the state was at a given time. It's worth bearing in mind that if object whose states you want to capture contains lot of data, using the memnto pattern can result in increase in memory usage and this might outweigh the benefits of using it.
+- But the object state is fairly simple and you want to be able to save it and restore it later the memento pattern is good way  to do this without exposing the structure of the objects
+
  
